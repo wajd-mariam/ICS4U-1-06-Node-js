@@ -6,7 +6,7 @@
  * 
  * @author Wajd Mariam <wajd.mariam@mths.ca>
  *
- * Created on : 2020/11/27
+ * Created on : 2020/12/01
  */
 
 // Imports prompt
@@ -17,26 +17,25 @@ function rollDice (minValue, maxValue) {
   // Generating a random number:
   const randomNumber = Math.floor(Math.random()*(maxValue - minValue + 1)+ minValue);
   
-  // Printing out random generated number:
-  console.log(`The random generated number is ${randomNumber}`);
+  // Returning random number:
+  return randomNumber;
 }
 
-// This function gets input from the user
-function main(){
-  
-  // Declaring constants
+// Try Catch Statement:
+try {
+  // Declaring variables and constants:
   let minValue = 1;
-  
-  // Try Catch Statement:
-  try {
+  let number = 0;
+
   // User Input:
   var maxValue = prompt(`Enter the maximum range of random generated number: `);
+  
+  // Calls rollDice function:
+  number = rollDice(minValue, maxValue);
+  // Output:
+  console.log (`The random generated number is ${number}`);
 
-  } catch(err) {
+// Error Output:
+} catch(err) {
     console.log (`An error occurred`);
   }
-  // Calls rollDice function:
-  rollDice(minValue, maxValue);
-}
-
-main();
